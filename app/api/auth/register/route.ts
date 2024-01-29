@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDB } from "@lib/mongoDB"
 import User from "@models/User"
 import { hash } from "bcryptjs"
+import { NextRequest } from 'next/server';
 
-export const POST = async (req: NextApiRequest) => {
+export const POST = async (req: NextRequest) => {
   try {
     await connectToDB()
     
-    const { username, email, password } = req.body
+    const { username, email, password } = await req.json()
 
     const existingUser = await User.findOne({ email })
     
