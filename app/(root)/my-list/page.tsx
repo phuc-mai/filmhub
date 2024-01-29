@@ -8,7 +8,7 @@ const MyList = async () => {
 
   const myListDetails = await Promise.all(
     myList.map(async (movieId: number) => {
-      const details = await fetchMovieDetails(movieId);
+      const details = await fetchMovieDetails(movieId); 
       return details;
     })
   );

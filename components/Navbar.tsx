@@ -79,7 +79,7 @@ const Navbar = () => {
             <Link href="/my-list">
               My List
             </Link>
-            <p onClick={handleLogout}>Log out</p>
+            <a onClick={handleLogout}>Log out</a>
           </div>
         )}
       </div>
