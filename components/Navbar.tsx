@@ -1,7 +1,7 @@
 "use client";
 
-import { Logout, Search } from "@mui/icons-material";
-import { signOut, useSession } from "next-auth/react";
+import { Search } from "@mui/icons-material";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ const Navbar = () => {
       </Link>
 
       <div className="nav-links">
-        <Link href="/" className="link">
+        <Link href="/" className="nav-link">
           Home
         </Link>
         <Link href="/my-list" className="link">

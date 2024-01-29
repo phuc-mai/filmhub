@@ -57,7 +57,7 @@
   @apply flex gap-8 max-md:hidden;
 }
 
-.link {
+.nav-link {
   @apply text-white text-heading3-bold cursor-pointer hover:text-pink-1;
 }
 
