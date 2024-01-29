@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth"
 import { options } from "@app/api/auth/[...nextauth]/option"
 import User from "@models/User";
+import { connectToDB } from "@lib/mongoDB";
 
 export const fetchMyList = async () => {
   const session = await getServerSession(options)
@@ -9,6 +10,8 @@ export const fetchMyList = async () => {
     throw new Error('No user log in');
   }
 
+  await connectToDB();
+  
   const user = await User.findOne({ email: session.user.email });
 
   if (!user) {
