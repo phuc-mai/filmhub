@@ -65,7 +65,7 @@ const Modal = ({ movie, closeModal }: Props) => {
   }, [movie]);
 
   // ADD TO LIST
-  
+
   const getUser = async () => {
     try {
       const res = await fetch(`/api/user/${session?.user?.email}`);
@@ -107,14 +107,12 @@ const Modal = ({ movie, closeModal }: Props) => {
         />
       </button>
 
-      <div className="relative pt-[56.25%]">
-        <iframe
-          src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1`}
-          loading="lazy"
-          allowFullScreen
-          className="modal-video"
-        />
-      </div>
+      <iframe
+        src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1`}
+        loading="lazy"
+        allowFullScreen
+        className="modal-video"
+      />
 
       <div className="modal-content">
         <div className="flex justify-between">
@@ -125,9 +123,15 @@ const Modal = ({ movie, closeModal }: Props) => {
           <div className="flex gap-3">
             <p className="text-base-bold">Add to list</p>
             {isFavorite ? (
-                <RemoveCircle onClick={addToList} className="cursor-pointer text-pink-1" />
+              <RemoveCircle
+                onClick={addToList}
+                className="cursor-pointer text-pink-1"
+              />
             ) : (
-              <AddCircle onClick={addToList} className="cursor-pointer text-pink-1" />
+              <AddCircle
+                onClick={addToList}
+                className="cursor-pointer text-pink-1"
+              />
             )}
           </div>
         </div>
