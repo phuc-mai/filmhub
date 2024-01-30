@@ -3,17 +3,21 @@ import MovieCard from "@components/MovieCard";
 import { Movie } from "@lib/types";
 
 const SearchResults = async ({ query }: { query: string }) => {
-  let searchedMovie: Movie[] = [];
-  searchedMovie = await searchMovie(query);
+  let searchedMovies: Movie[] = [];
+  searchedMovies = await searchMovie(query);
 
-  return searchedMovie.length === 0 ? (
-    <h1 className="search-page">No results found</h1>
+  return searchedMovies.length === 0 ? (
+    <div>
+      <h1 className="text-heading2-bold text-white">No results found</h1>
+    </div>
   ) : (
     <div className="search-page">
-      <h1>Search results for "{query}"</h1>
+      <h1 className="text-heading2-bold text-white">
+        Search results for "{query}"
+      </h1>
 
       <div className="my-list">
-        {searchedMovie.map((movie) => (
+        {searchedMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>

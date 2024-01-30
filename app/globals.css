@@ -177,5 +177,5 @@
 
 /* Search Page */
 .search-page {
-  @apply flex flex-col py-16 px-10 text-heading2-bold text-white;
+  @apply flex flex-col py-16 px-10;
 }

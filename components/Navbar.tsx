@@ -58,10 +58,12 @@ const Navbar = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <Search
-            className="icon"
-            onClick={() => router.push(`/search/${search}`)}
-          />
+          <button disabled={search === ""}>
+            <Search
+              className="icon"
+              onClick={() => router.push(`/search/${search}`)}
+            />
+          </button>
         </div>
 
         <img
@@ -73,12 +75,8 @@ const Navbar = () => {
 
         {dropdownMenu && (
           <div className="dropdown-menu">
-            <Link href="/">
-              Home
-            </Link>
-            <Link href="/my-list">
-              My List
-            </Link>
+            <Link href="/">Home</Link>
+            <Link href="/my-list">My List</Link>
             <a onClick={handleLogout}>Log out</a>
           </div>
         )}
